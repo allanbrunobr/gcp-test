@@ -4,34 +4,39 @@
 <html>
 <head>
   <link href='//fonts.googleapis.com/css?family=Marmelad' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
 
-  <title>Hello App Engine Standard Java 8</title>
+  <title>GCP - APP</title>
 </head>
 <body>
 <div class="container">
-  <h1>Hello App Engine</h1>
-  <form>
-    <div class="form-group">
+  <h1>Preencha os campos abaixo </h1>
+  <form class="needs-validation" novalidate>
+    <div class="form-group col-md-4">
       <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite email" required>
+      <div class="valid-tooltip">
+        Looks good!
+      </div>
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
-    <div class="form-group">
+    <div class="form-group col-md-4">
       <label for="exampleInputPassword1">Password</label>
       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div>
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <div class="form-group col-md-4">
+      <label for="exampleFormControlFile1">Selecione o arquivo</label>
+      <input type="file" class="form-control-file" id="exampleFormControlFile1">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group col-md-2">
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
   </form>
-
 </div>
 
 <!-- Bootstrap JavaScript -->
-<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/bootstrap.bundle.js"></script>
+
 </body>
 
 </html>
