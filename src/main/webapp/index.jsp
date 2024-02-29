@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.mycompany.myapp.HelloAppEngine" %>
+<%@ page import="com.ecore.bruno.HelloAppEngine" %>
 <html>
 <head>
   <link href='//fonts.googleapis.com/css?family=Marmelad' rel='stylesheet' type='text/css'>
@@ -11,7 +11,7 @@
 <body>
 <div class="container">
   <h1>Preencha os campos abaixo </h1>
-  <form class="needs-validation" novalidate>
+  <form class="needs-validation" action="/upload" method="post" enctype="multipart/form-data">
     <div class="form-group col-md-4">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite email" required>
@@ -26,7 +26,7 @@
     </div>
     <div class="form-group col-md-4">
       <label for="exampleFormControlFile1">Selecione o arquivo</label>
-      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
     </div>
     <div class="form-group col-md-2">
       <button type="submit" class="btn btn-primary">Enviar</button>

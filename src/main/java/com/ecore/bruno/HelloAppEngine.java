@@ -1,6 +1,8 @@
-package com.mycompany.myapp;
+package com.ecore.bruno;
 
 import com.google.appengine.api.utils.SystemProperty;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -16,7 +18,6 @@ public class HelloAppEngine extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response)
       throws IOException {
-
     Properties properties = System.getProperties();
 
 
