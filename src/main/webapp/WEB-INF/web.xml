@@ -10,8 +10,8 @@
 
 
 <servlet>
-<servlet-name>UploadServlet</servlet-name>
-<servlet-class>com.ecore.bruno.servlets.UploadServlet</servlet-class>
+<servlet-name>UploadFileToStorage</servlet-name>
+<servlet-class>com.ecore.bruno.cloud.gcp.storage.UploadImageToStorage</servlet-class>
 <multipart-config>
   <max-file-size>10000000</max-file-size>
   <max-request-size>10000000</max-request-size>
@@ -20,8 +20,8 @@
 </servlet>
   <!-- Mapeamento do servlet para o URL /upload -->
   <servlet-mapping>
-    <servlet-name>UploadServlet</servlet-name>
-    <url-pattern>/upload</url-pattern>
+    <servlet-name>UploadFileToStorage</servlet-name>
+    <url-pattern>/uploadFileToStorage</url-pattern>
   </servlet-mapping>
 
 </web-app>

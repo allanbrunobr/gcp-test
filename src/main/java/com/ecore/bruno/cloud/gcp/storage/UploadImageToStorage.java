@@ -1,19 +1,17 @@
-package com.ecore.bruno.servlets;
+package com.ecore.bruno.cloud.gcp.storage;
 
+import com.ecore.bruno.cloud.gcp.functions.CloudFunctionClient;
 import com.google.cloud.storage.*;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.UUID;
 
-//@WebServlet(name = "Upload", urlPatterns = {"/upload"})
-//@MultipartConfig
-public class UploadServlet  extends HttpServlet {
+public class UploadImageToStorage extends HttpServlet {
+    private CloudFunctionClient cloudFunctionClient = new CloudFunctionClient();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String projectId = "western-lambda-415113";
@@ -28,7 +26,15 @@ public class UploadServlet  extends HttpServlet {
         // Salvar o arquivo no Cloud Storage
         Blob blob = storage.create(blobInfo, request.getPart("file").getInputStream());
 
-        response.getWriter().println("Arquivo enviado com sucesso: " + blob.getName());
+        // Chamar a Cloud Function para analisar a imagem
+        //String cloudFunctionResponse = cloudFunctionClient.callCloudFunction(fileName);
+
+        // Configurar atributo para passar a resposta da função para a próxima página JSP
+        //request.setAttribute("cloudFunctionResponse", cloudFunctionResponse);
+
+        // Redirecionar para a página JSP que exibirá a resposta da função
+       // request.getRequestDispatcher("pages/result.jsp").forward(request, response);
+
     }
 
     @Override
